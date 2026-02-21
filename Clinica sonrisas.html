@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Dental Sonrisas | Tu Dentista en Lorca</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        .bg-medical {
+            background-color: #f0f9ff;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%230891b2' fill-opacity='0.05'%3E%3Cpath d='M0 38.59V40h1.41l1.1-1.11L1.41 37.78 0 38.59zM0 1.41L1.41 0H0v1.41zM1 1L0 2V0h2L1 1zm10 10l-1 1V10h2l-1 1zm10 10l-1 1V20h2l-1 1zm10 10l-1 1V30h2l-1 1zM40 1.41L38.59 0H40v1.41zM39 1l1 1V0h-2l1 1zm-10 10l1 1V10h-2l1 1zm-10 10l1 1V20h-2l1 1zm-10 10l1 1V30h-2l1 1zM0 21.41L1.41 20H0v1.41zM1 21l-1 1v-2h2l-1 1zM0 1.41L1.41 0H0v1.41zM1 1L0 2V0h2L1 1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- BARRA SUPERIOR DE CONTACTO -->
+    <div class="bg-cyan-700 text-white py-2 text-sm hidden md:block">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <div class="flex gap-6">
+                <span><i class="fas fa-map-marker-alt text-cyan-300 mr-2"></i>C. Maria Mar Marmol Ferri, Lorca</span>
+                <span><i class="fas fa-phone-alt text-cyan-300 mr-2"></i>690 24 35 37</span>
+            </div>
+            <div class="flex gap-4 italic">
+                <span><i class="fas fa-star text-yellow-400 mr-1"></i> 4.4 en Google Maps</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="glass-nav sticky top-0 z-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="bg-cyan-600 text-white p-2.5 rounded-xl group-hover:rotate-12 transition-transform">
+                        <i class="fas fa-tooth fa-lg"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-black tracking-tight block leading-none">SONRISAS</span>
+                        <span class="text-[10px] uppercase tracking-[0.2em] text-cyan-600 font-bold">Clínica Dental</span>
+                    </div>
+                </a>
+                
+                <div class="hidden md:flex space-x-10 font-semibold text-slate-600">
+                    <a href="#inicio" class="hover:text-cyan-600 transition">Inicio</a>
+                    <a href="#servicios" class="hover:text-cyan-600 transition">Especialidades</a>
+                    <a href="#experiencia" class="hover:text-cyan-600 transition">Opiniones</a>
+                    <a href="#contacto" class="hover:text-cyan-600 transition">Ubicación</a>
+                </div>
+
+                <a href="https://wa.me/34690243537" class="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-3 rounded-full font-bold transition flex items-center gap-2 shadow-lg shadow-cyan-100">
+                    <i class="fab fa-whatsapp"></i> <span class="hidden lg:inline">Cita Previa</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative py-16 lg:py-24 overflow-hidden bg-medical">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
+            <div class="lg:w-1/2 z-10 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-100 text-cyan-700 text-xs font-bold mb-6 uppercase tracking-wider">
+                    <span class="flex h-2 w-2 rounded-full bg-cyan-600 animate-ping"></span>
+                    Abierto desde las 10:00 AM
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-black text-slate-900 leading-[1.1] mb-8">
+                    Cuidamos cada <span class="text-cyan-600">detalle</span> de tu boca.
+                </h1>
+                <p class="text-xl text-slate-600 mb-10 max-w-xl leading-relaxed mx-auto lg:mx-0">
+                    Tecnología de vanguardia y un equipo comprometido con tu bienestar en el centro de Lorca. Porque tu salud no puede esperar.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                    <a href="tel:690243537" class="bg-slate-900 hover:bg-slate-800 text-white px-10 py-5 rounded-2xl font-bold text-lg transition flex items-center justify-center gap-3 shadow-xl">
+                        <i class="fas fa-phone-alt"></i> Llamar ahora
+                    </a>
+                    <a href="#contacto" class="bg-white border-2 border-slate-200 hover:border-cyan-600 text-slate-700 px-10 py-5 rounded-2xl font-bold text-lg transition shadow-sm">
+                        Ver dirección
+                    </a>
+                </div>
+            </div>
+            <div class="lg:w-1/2 relative">
+                <div class="absolute inset-0 bg-cyan-500 rounded-[3rem] rotate-3 opacity-10"></div>
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=1000" alt="Clínica Moderna" class="rounded-[2.5rem] shadow-2xl relative z-10 border-8 border-white">
+                
+                <!-- Floating Info -->
+                <div class="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl z-20 hidden sm:block border border-slate-100">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-yellow-100 text-yellow-600 p-3 rounded-xl">
+                            <i class="fas fa-star text-2xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-black leading-none">4.4 / 5</p>
+                            <p class="text-sm text-slate-500 font-medium italic">En Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN POR QUÉ ELEGIRNOS -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-cyan-50 text-cyan-600 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-user-md fa-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Equipo Experto</h3>
+                    <p class="text-slate-500">Profesionales colegiados con años de experiencia en tratamientos complejos.</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-cyan-50 text-cyan-600 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-microscope fa-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Tecnología Avanzada</h3>
+                    <p class="text-slate-500">Equipamiento de última generación para diagnósticos más precisos y rápidos.</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-cyan-50 text-cyan-600 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-heart fa-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Trato Cercano</h3>
+                    <p class="text-slate-500">Nos tomamos el tiempo necesario para explicarte cada paso de tu tratamiento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESPECIALIDADES -->
+    <section id="servicios" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">Especialidades Dentales</h2>
+                    <p class="text-lg text-slate-500">Cubrimos todas las necesidades de salud bucodental de tu familia con los más altos estándares de calidad.</p>
+                </div>
+                <a href="https://wa.me/34690243537" class="text-cyan-600 font-bold flex items-center gap-2 hover:underline">
+                    Consultar todos los servicios <i class="fas fa-arrow-right text-sm"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-10 rounded-3xl border border-slate-200 hover-lift">
+                    <i class="fas fa-shield-alt text-4xl text-cyan-600 mb-8 block"></i>
+                    <h4 class="text-2xl font-bold mb-4">Odontología Preventiva</h4>
+                    <p class="text-slate-500 leading-relaxed mb-6">Revisiones, limpiezas de ultrasonido y sellados para evitar problemas futuros.</p>
+                    <ul class="space-y-2 text-sm font-semibold text-slate-400">
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i> Limpieza profesional</li>
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i> Fluoración</li>
+                    </ul>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white p-10 rounded-3xl border border-slate-200 hover-lift">
+                    <i class="fas fa-smile-beam text-4xl text-cyan-600 mb-8 block"></i>
+                    <h4 class="text-2xl font-bold mb-4">Estética Dental</h4>
+                    <p class="text-slate-500 leading-relaxed mb-6">Blanqueamientos LED y carillas de porcelana para transformar tu sonrisa.</p>
+                    <ul class="space-y-2 text-sm font-semibold text-slate-400">
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i> Blanqueamiento</li>
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i> Diseño de sonrisa</li>
+                    </ul>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white p-10 rounded-3xl border border-slate-200 hover-lift">
+                    <i class="fas fa-vial text-4xl text-cyan-600 mb-8 block"></i>
+                    <h4 class="text-2xl font-bold mb-4">Implantología</h4>
+                    <p class="text-slate-500 leading-relaxed mb-6">Reposición de piezas perdidas con materiales biocompatibles de alta gama.</p>
+                    <ul class="space-y-2 text-sm font-semibold text-slate-400">
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i> Cirugía mín. invasiva</li>
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i> Prótesis fijas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS (BASADO EN REVIEWS REALES) -->
+    <section id="experiencia" class="py-24 bg-cyan-900 text-white overflow-hidden relative">
+        <div class="absolute top-0 right-0 p-20 opacity-10">
+            <i class="fas fa-quote-right text-[200px]"></i>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 class="text-3xl md:text-5xl font-black mb-16 text-center italic">"Lo que nuestros pacientes dicen en Lorca"</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10">
+                    <div class="flex text-yellow-400 mb-6">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="italic text-lg mb-6 leading-relaxed">"Excelente trato y profesionalidad. Me explicaron todo perfectamente y el resultado fue inmejorable. ¡Muy recomendables!"</p>
+                    <p class="font-bold text-cyan-300">— Cliente Verificado</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10 translate-y-4">
+                    <div class="flex text-yellow-400 mb-6">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="italic text-lg mb-6 leading-relaxed">"La mejor clínica de Lorca. Higiene impecable y el personal es súper amable. Me sentí muy cómodo desde el primer momento."</p>
+                    <p class="font-bold text-cyan-300">— Paciente local</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10">
+                    <div class="flex text-yellow-400 mb-6">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="italic text-lg mb-6 leading-relaxed">"Son muy puntuales con las citas y el equipamiento que tienen se nota que es moderno. Volveré sin duda."</p>
+                    <p class="font-bold text-cyan-300">— Reseña de Google</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO Y HORARIOS -->
+    <section id="contacto" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-16">
+                
+                <!-- Info de contacto -->
+                <div class="lg:w-1/3">
+                    <h2 class="text-4xl font-black mb-10 text-slate-900">Contacto</h2>
+                    
+                    <div class="space-y-10">
+                        <div class="flex gap-6 items-start">
+                            <div class="bg-slate-900 text-white p-4 rounded-2xl">
+                                <i class="fas fa-map-marker-alt fa-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Visítanos</h4>
+                                <p class="text-slate-500 leading-relaxed">C. Maria Mar Marmol Ferri, <br>30800 Lorca, Murcia</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6 items-start">
+                            <div class="bg-green-500 text-white p-4 rounded-2xl">
+                                <i class="fab fa-whatsapp fa-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">WhatsApp</h4>
+                                <p class="text-slate-500">Respuesta rápida en horario comercial</p>
+                                <a href="https://wa.me/34690243537" class="text-green-600 font-bold hover:underline">690 24 35 37</a>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100">
+                            <h4 class="font-bold text-lg mb-6 flex items-center gap-2 text-cyan-700">
+                                <i class="fas fa-clock"></i> Horario Semanal
+                            </h4>
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex justify-between border-b border-slate-200 pb-2">
+                                    <span class="font-semibold">Lunes</span>
+                                    <span>Desde 10:00 AM</span>
+                                </li>
+                                <li class="flex justify-between border-b border-slate-200 pb-2 italic text-slate-400">
+                                    <span>Martes - Viernes</span>
+                                    <span>Consultar cita</span>
+                                </li>
+                                <li class="flex justify-between text-red-400 font-medium">
+                                    <span>Sábados y Domingos</span>
+                                    <span>Cerrado</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mapa Interactivo Visual -->
+                <div class="lg:w-2/3 h-[500px] lg:h-auto min-h-[500px] rounded-[3rem] overflow-hidden shadow-inner border border-slate-200 relative group">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3161.464670265113!2d-1.6945846234690967!3d37.68137777202302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd64e639be8a1e07%3A0xb19755f02f47ebf3!2sCLINICA%20DENTAL%20%22SONRISAS%22!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses" 
+                        class="w-full h-full grayscale-[0.2] contrast-[1.1]" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur p-4 rounded-2xl flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="text-sm font-bold">M8J5+H5 Lorca, Murcia</span>
+                        <a href="https://www.google.com/maps/dir//CLINICA+DENTAL+%22SONRISAS%22,+C.+Maria+Mar+Marmol+Ferri,+30800+Lorca,+Murcia" target="_blank" class="bg-cyan-600 text-white px-4 py-2 rounded-xl text-xs font-bold uppercase">Cómo llegar</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-12 mb-16">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-4 justify-center md:justify-start">
+                        <i class="fas fa-tooth text-cyan-400 fa-2x"></i>
+                        <span class="text-2xl font-black tracking-tighter uppercase">Sonrisas</span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm">
+                        Referente en salud dental en Lorca. Combinamos ética profesional con tecnología de vanguardia.
+                    </p>
+                </div>
+                
+                <div class="flex gap-4">
+                    <a href="#" class="w-12 h-12 rounded-full border border-slate-800 flex items-center justify-center hover:bg-cyan-600 transition group">
+                        <i class="fab fa-instagram group-hover:scale-110 transition"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full border border-slate-800 flex items-center justify-center hover:bg-cyan-600 transition group">
+                        <i class="fab fa-facebook-f group-hover:scale-110 transition"></i>
+                    </a>
+                    <a href="https://www.google.com/maps/place/CLINICA+DENTAL+%22SONRISAS%22" class="w-12 h-12 rounded-full border border-slate-800 flex items-center justify-center hover:bg-cyan-600 transition group">
+                        <i class="fab fa-google group-hover:scale-110 transition"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-900 pt-12 text-center text-slate-500 text-sm">
+                <p class="mb-2">Calle María Mar Mármol Ferri, Lorca (Murcia) | Tel: 690 24 35 37</p>
+                <p>&copy; 2024 Clínica Dental Sonrisas. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
