@@ -3,338 +3,372 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica Dental Sonrisas | Tu Dentista en Lorca</title>
+    <title>Mente Clara - Experiencia Inmersiva</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
-        
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        
-        .bg-medical {
-            background-color: #f0f9ff;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%230891b2' fill-opacity='0.05'%3E%3Cpath d='M0 38.59V40h1.41l1.1-1.11L1.41 37.78 0 38.59zM0 1.41L1.41 0H0v1.41zM1 1L0 2V0h2L1 1zm10 10l-1 1V10h2l-1 1zm10 10l-1 1V20h2l-1 1zm10 10l-1 1V30h2l-1 1zM40 1.41L38.59 0H40v1.41zM39 1l1 1V0h-2l1 1zm-10 10l1 1V10h-2l1 1zm-10 10l1 1V20h-2l1 1zm-10 10l1 1V30h-2l1 1zM0 21.41L1.41 20H0v1.41zM1 21l-1 1v-2h2l-1 1zM0 1.41L1.41 0H0v1.41zM1 1L0 2V0h2L1 1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        :root {
+            --bg-dark: #09090b;
+            --accent: #ffffff;
+            --gray-muted: #71717a;
+            --primary: #3b82f6;
         }
 
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+        body {
+            background-color: var(--bg-dark);
+            color: var(--accent);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .font-serif { font-family: 'Playfair+Display', serif; }
+
+        .section {
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
-        .hover-lift:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+        .btn-action {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
         }
+
+        .btn-action:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-primary {
+            background: white;
+            color: black;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+        }
+
+        .streak-fire {
+            background: linear-gradient(to right, #f59e0b, #ef4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .applied-badge {
+            background: #10b981;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+
+        .ambient-glow {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+            filter: blur(40px);
+        }
+
+        .immersive-mode { background-color: #000; }
+        .immersive-mode .ui-hide { opacity: 0; pointer-events: none; }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 10px; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="min-h-screen flex flex-col items-center justify-center p-4">
 
-    <!-- BARRA SUPERIOR DE CONTACTO -->
-    <div class="bg-cyan-700 text-white py-2 text-sm hidden md:block">
-        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
-            <div class="flex gap-6">
-                <span><i class="fas fa-map-marker-alt text-cyan-300 mr-2"></i>C. Maria Mar Marmol Ferri, Lorca</span>
-                <span><i class="fas fa-phone-alt text-cyan-300 mr-2"></i>690 24 35 37</span>
-            </div>
-            <div class="flex gap-4 italic">
-                <span><i class="fas fa-star text-yellow-400 mr-1"></i> 4.4 en Google Maps</span>
-            </div>
-        </div>
-    </div>
+    <div class="ambient-glow" id="glow"></div>
+
+    <!-- Audio de Fondo (Canción solicitada) -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="https://assets.mixkit.co/music/preview/mixkit-deep-urban-623.mp3" type="audio/mpeg">
+    </audio>
 
     <!-- NAVEGACIÓN -->
-    <nav class="glass-nav sticky top-0 z-50 border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="bg-cyan-600 text-white p-2.5 rounded-xl group-hover:rotate-12 transition-transform">
-                        <i class="fas fa-tooth fa-lg"></i>
-                    </div>
-                    <div>
-                        <span class="text-xl font-black tracking-tight block leading-none">SONRISAS</span>
-                        <span class="text-[10px] uppercase tracking-[0.2em] text-cyan-600 font-bold">Clínica Dental</span>
-                    </div>
-                </a>
-                
-                <div class="hidden md:flex space-x-10 font-semibold text-slate-600">
-                    <a href="#inicio" class="hover:text-cyan-600 transition">Inicio</a>
-                    <a href="#servicios" class="hover:text-cyan-600 transition">Especialidades</a>
-                    <a href="#experiencia" class="hover:text-cyan-600 transition">Opiniones</a>
-                    <a href="#contacto" class="hover:text-cyan-600 transition">Ubicación</a>
-                </div>
-
-                <a href="https://wa.me/34690243537" class="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-3 rounded-full font-bold transition flex items-center gap-2 shadow-lg shadow-cyan-100">
-                    <i class="fab fa-whatsapp"></i> <span class="hidden lg:inline">Cita Previa</span>
-                </a>
+    <nav class="fixed top-0 w-full p-6 md:p-10 flex justify-between items-center z-50 ui-hide transition-opacity duration-500">
+        <div class="text-xl font-serif tracking-widest cursor-pointer" onclick="showSection('hero')">MENTE CLARA</div>
+        <div class="flex items-center gap-6">
+            <div class="flex flex-col items-end">
+                <span class="text-[10px] uppercase opacity-40 tracking-widest">Racha de Acción</span>
+                <span class="streak-fire font-bold" id="streakVal">0 Días</span>
             </div>
+            <button onclick="showSection('library')" class="p-2 hover:bg-white/5 rounded-full transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section id="inicio" class="relative py-16 lg:py-24 overflow-hidden bg-medical">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
-            <div class="lg:w-1/2 z-10 text-center lg:text-left">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-100 text-cyan-700 text-xs font-bold mb-6 uppercase tracking-wider">
-                    <span class="flex h-2 w-2 rounded-full bg-cyan-600 animate-ping"></span>
-                    Abierto desde las 10:00 AM
-                </div>
-                <h1 class="text-5xl lg:text-7xl font-black text-slate-900 leading-[1.1] mb-8">
-                    Cuidamos cada <span class="text-cyan-600">detalle</span> de tu boca.
-                </h1>
-                <p class="text-xl text-slate-600 mb-10 max-w-xl leading-relaxed mx-auto lg:mx-0">
-                    Tecnología de vanguardia y un equipo comprometido con tu bienestar en el centro de Lorca. Porque tu salud no puede esperar.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-                    <a href="tel:690243537" class="bg-slate-900 hover:bg-slate-800 text-white px-10 py-5 rounded-2xl font-bold text-lg transition flex items-center justify-center gap-3 shadow-xl">
-                        <i class="fas fa-phone-alt"></i> Llamar ahora
-                    </a>
-                    <a href="#contacto" class="bg-white border-2 border-slate-200 hover:border-cyan-600 text-slate-700 px-10 py-5 rounded-2xl font-bold text-lg transition shadow-sm">
-                        Ver dirección
-                    </a>
-                </div>
-            </div>
-            <div class="lg:w-1/2 relative">
-                <div class="absolute inset-0 bg-cyan-500 rounded-[3rem] rotate-3 opacity-10"></div>
-                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=1000" alt="Clínica Moderna" class="rounded-[2.5rem] shadow-2xl relative z-10 border-8 border-white">
-                
-                <!-- Floating Info -->
-                <div class="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl z-20 hidden sm:block border border-slate-100">
-                    <div class="flex items-center gap-4">
-                        <div class="bg-yellow-100 text-yellow-600 p-3 rounded-xl">
-                            <i class="fas fa-star text-2xl"></i>
-                        </div>
-                        <div>
-                            <p class="text-2xl font-black leading-none">4.4 / 5</p>
-                            <p class="text-sm text-slate-500 font-medium italic">En Google Maps</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- 1. PANTALLA PRINCIPAL (HERO) -->
+    <section id="hero" class="section flex flex-col items-center text-center max-w-2xl">
+        <div class="mb-6 opacity-40 text-xs uppercase tracking-[0.4em]">Estrategia del día</div>
+        <h1 id="hero-phrase" class="text-3xl md:text-5xl font-serif italic mb-12 leading-tight px-4">
+            "No es la idea más brillante la que gana, es la que se ejecuta mejor."
+        </h1>
+        <button onclick="showSection('daily')" class="btn-primary">Aprende de esto hoy</button>
+    </section>
+
+    <!-- 2. REFLEXIÓN DIARIA -->
+    <section id="daily" class="section hidden flex flex-col items-center text-center max-w-xl px-4">
+        <div id="category-tag" class="mb-4 text-blue-400 uppercase tracking-widest text-[10px] font-bold">Estrategia</div>
+        <p id="daily-text" class="text-xl md:text-2xl font-light leading-relaxed mb-10 text-zinc-200">
+            Cargando lección...
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-4 mb-12 ui-hide">
+            <button onclick="markApplied()" id="applyBtn" class="btn-action flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Marcar como aplicada
+            </button>
+            <button onclick="toggleMusic()" id="musicBtn" class="btn-action flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                </svg>
+                Música ON
+            </button>
+        </div>
+
+        <div class="flex gap-6 opacity-40 text-xs uppercase tracking-widest ui-hide">
+            <button onclick="showSection('hero')" class="hover:text-white transition">Volver al inicio</button>
+            <button onclick="showSection('library')" class="hover:text-white transition">Ir a biblioteca</button>
         </div>
     </section>
 
-    <!-- SECCIÓN POR QUÉ ELEGIRNOS -->
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div class="flex flex-col items-center text-center">
-                    <div class="w-16 h-16 bg-cyan-50 text-cyan-600 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-user-md fa-2x"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Equipo Experto</h3>
-                    <p class="text-slate-500">Profesionales colegiados con años de experiencia en tratamientos complejos.</p>
-                </div>
-                <div class="flex flex-col items-center text-center">
-                    <div class="w-16 h-16 bg-cyan-50 text-cyan-600 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-microscope fa-2x"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Tecnología Avanzada</h3>
-                    <p class="text-slate-500">Equipamiento de última generación para diagnósticos más precisos y rápidos.</p>
-                </div>
-                <div class="flex flex-col items-center text-center">
-                    <div class="w-16 h-16 bg-cyan-50 text-cyan-600 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-heart fa-2x"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Trato Cercano</h3>
-                    <p class="text-slate-500">Nos tomamos el tiempo necesario para explicarte cada paso de tu tratamiento.</p>
-                </div>
+    <!-- 3. BIBLIOTECA -->
+    <section id="library" class="section hidden w-full max-w-5xl px-4 py-32 overflow-y-auto h-screen">
+        <div class="flex justify-between items-center mb-10">
+            <h2 class="text-3xl font-serif">Biblioteca</h2>
+            <div class="flex gap-2 flex-wrap justify-end">
+                <button onclick="filterLibrary('all')" class="text-[10px] uppercase border border-white/10 px-3 py-1 rounded-full hover:bg-white/10">Todo</button>
+                <button onclick="filterLibrary('Estrategia')" class="text-[10px] uppercase border border-white/10 px-3 py-1 rounded-full hover:bg-white/10">Estrategia</button>
+                <button onclick="filterLibrary('Liderazgo')" class="text-[10px] uppercase border border-white/10 px-3 py-1 rounded-full hover:bg-white/10">Liderazgo</button>
+                <button onclick="filterLibrary('Marketing')" class="text-[10px] uppercase border border-white/10 px-3 py-1 rounded-full hover:bg-white/10">Marketing</button>
+                <button onclick="filterLibrary('Finanzas')" class="text-[10px] uppercase border border-white/10 px-3 py-1 rounded-full hover:bg-white/10">Finanzas</button>
             </div>
         </div>
+        <div id="library-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pb-20"></div>
     </section>
 
-    <!-- ESPECIALIDADES -->
-    <section id="servicios" class="py-24 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-                <div class="max-w-2xl">
-                    <h2 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">Especialidades Dentales</h2>
-                    <p class="text-lg text-slate-500">Cubrimos todas las necesidades de salud bucodental de tu familia con los más altos estándares de calidad.</p>
-                </div>
-                <a href="https://wa.me/34690243537" class="text-cyan-600 font-bold flex items-center gap-2 hover:underline">
-                    Consultar todos los servicios <i class="fas fa-arrow-right text-sm"></i>
-                </a>
-            </div>
+    <div id="exitImmersive" class="fixed bottom-10 opacity-0 transition-opacity duration-700 pointer-events-none z-50">
+        <button onclick="exitImmersive()" class="text-[10px] uppercase tracking-[0.4em] opacity-30 hover:opacity-100">Click para volver al mundo real</button>
+    </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-white p-10 rounded-3xl border border-slate-200 hover-lift">
-                    <i class="fas fa-shield-alt text-4xl text-cyan-600 mb-8 block"></i>
-                    <h4 class="text-2xl font-bold mb-4">Odontología Preventiva</h4>
-                    <p class="text-slate-500 leading-relaxed mb-6">Revisiones, limpiezas de ultrasonido y sellados para evitar problemas futuros.</p>
-                    <ul class="space-y-2 text-sm font-semibold text-slate-400">
-                        <li><i class="fas fa-check text-cyan-500 mr-2"></i> Limpieza profesional</li>
-                        <li><i class="fas fa-check text-cyan-500 mr-2"></i> Fluoración</li>
-                    </ul>
-                </div>
-                <!-- Card 2 -->
-                <div class="bg-white p-10 rounded-3xl border border-slate-200 hover-lift">
-                    <i class="fas fa-smile-beam text-4xl text-cyan-600 mb-8 block"></i>
-                    <h4 class="text-2xl font-bold mb-4">Estética Dental</h4>
-                    <p class="text-slate-500 leading-relaxed mb-6">Blanqueamientos LED y carillas de porcelana para transformar tu sonrisa.</p>
-                    <ul class="space-y-2 text-sm font-semibold text-slate-400">
-                        <li><i class="fas fa-check text-cyan-500 mr-2"></i> Blanqueamiento</li>
-                        <li><i class="fas fa-check text-cyan-500 mr-2"></i> Diseño de sonrisa</li>
-                    </ul>
-                </div>
-                <!-- Card 3 -->
-                <div class="bg-white p-10 rounded-3xl border border-slate-200 hover-lift">
-                    <i class="fas fa-vial text-4xl text-cyan-600 mb-8 block"></i>
-                    <h4 class="text-2xl font-bold mb-4">Implantología</h4>
-                    <p class="text-slate-500 leading-relaxed mb-6">Reposición de piezas perdidas con materiales biocompatibles de alta gama.</p>
-                    <ul class="space-y-2 text-sm font-semibold text-slate-400">
-                        <li><i class="fas fa-check text-cyan-500 mr-2"></i> Cirugía mín. invasiva</li>
-                        <li><i class="fas fa-check text-cyan-500 mr-2"></i> Prótesis fijas</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div id="toast" class="fixed bottom-10 bg-white text-black px-6 py-3 rounded-xl shadow-2xl font-bold text-sm transform translate-y-32 transition-transform duration-500 z-[100]">
+        Acción registrada.
+    </div>
 
-    <!-- TESTIMONIOS (BASADO EN REVIEWS REALES) -->
-    <section id="experiencia" class="py-24 bg-cyan-900 text-white overflow-hidden relative">
-        <div class="absolute top-0 right-0 p-20 opacity-10">
-            <i class="fas fa-quote-right text-[200px]"></i>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <h2 class="text-3xl md:text-5xl font-black mb-16 text-center italic">"Lo que nuestros pacientes dicen en Lorca"</h2>
+    <script>
+        const database = [
+            { id: 1, category: 'Estrategia', phrase: "Ejecución sobre idea.", content: "La parálisis por análisis es el cementerio de las grandes empresas. Mañana tendrás más información, pero hoy tienes la oportunidad de ser el primero. Ejecuta lo mínimo viable ahora mismo." },
+            { id: 2, category: 'Liderazgo', phrase: "Crea líderes, no seguidores.", content: "Delega responsabilidad, no solo tareas. Si tu equipo no puede decidir sin ti, tienes un autoempleo, no un negocio. Empodera a tu gente hoy." },
+            { id: 3, category: 'Marketing', phrase: "Nicho sobre masa.", content: "Si le hablas a todo el mundo, no le hablas a nadie. Encuentra tu nicho. Es mejor ser el referente de un sector pequeño que una opción irrelevante." },
+            { id: 4, category: 'Mentalidad', phrase: "Fracaso como dato.", content: "Cada error es información gratuita. Itera rápido, aprende más rápido. El éxito es la suma de fallos inteligentes analizados con frialdad." },
+            { id: 5, category: 'Productividad', phrase: "Ley de Pareto.", content: "Elimina las reuniones de una hora que podrían ser un mensaje corto. Enfócate exclusivamente en el veinte por ciento que genera el ochenta por ciento de tus ingresos." },
+            { id: 6, category: 'Ventas', phrase: "Escucha más, habla menos.", content: "El mejor vendedor no es el que más habla, sino el que mejores preguntas hace. Entiende el dolor de tu cliente antes de ofrecer la medicina." },
+            { id: 7, category: 'Finanzas', phrase: "Caja es reina.", content: "La facturación es vanidad, el beneficio es sanidad, pero la caja es la realidad. Nunca te quedes sin liquidez por perseguir un crecimiento ficticio." },
+            { id: 8, category: 'Estrategia', phrase: "Ventaja competitiva.", content: "Si no tienes una ventaja competitiva, no compitas. Busca lo que te hace único y explótalo hasta que sea tu firma personal en el mercado." },
+            { id: 9, category: 'Liderazgo', phrase: "Contrata lento, despide rápido.", content: "Una mala contratación puede destruir la cultura de tu empresa. Tómate el tiempo para encontrar el talento adecuado, pero actúa sin dudar si alguien resta." },
+            { id: 10, category: 'Marketing', phrase: "Prueba social.", content: "La gente no compra lo que haces, compra lo que otros dicen que haces. Consigue testimonios reales y utilízalos como tu mejor herramienta de venta." },
+            { id: 11, category: 'Productividad', phrase: "Bloques de tiempo.", content: "La multitarea es un mito que destruye la calidad. Divide tu día en bloques de enfoque profundo. Una tarea a la vez, con toda tu capacidad." },
+            { id: 12, category: 'Estrategia', phrase: "Océano Azul.", content: "No intentes ganar a tus competidores en su propio juego. Crea un nuevo mercado donde la competencia sea irrelevante. Innova en el valor." },
+            { id: 13, category: 'Finanzas', phrase: "Diversificación de ingresos.", content: "Depender de un solo cliente es una sentencia de muerte a largo plazo. Busca al menos tres fuentes de ingresos independientes para estabilizar tu negocio." },
+            { id: 14, category: 'Ventas', phrase: "Seguimiento implacable.", content: "La mayoría de las ventas se cierran después del quinto contacto. No te rindas al primer 'no'. La persistencia profesional genera confianza." },
+            { id: 15, category: 'Liderazgo', phrase: "Cultura sobre estrategia.", content: "La cultura organizacional se desayuna a la estrategia. Si tu equipo no cree en la misión, ningún plan brillante funcionará en la práctica." },
+            { id: 16, category: 'Marketing', phrase: "Storytelling.", content: "Los datos informan, pero las historias venden. Conecta emocionalmente con tu audiencia contando el 'por qué' detrás de tu producto o servicio." },
+            { id: 17, category: 'Productividad', phrase: "Dí 'No' a menudo.", content: "Cada vez que dices 'sí' a algo que no es prioritario, le estás diciendo 'no' a tus metas reales. Protege tu tiempo como tu activo más valioso." },
+            { id: 18, category: 'Estrategia', phrase: "Pivota con datos.", content: "No te enamores de tu idea inicial. Si el mercado te da señales claras de cambio, pivota. La flexibilidad es la clave de la supervivencia empresarial." },
+            { id: 19, category: 'Finanzas', phrase: "Gasto hormiga corporativo.", content: "Revisa tus suscripciones y costes fijos cada mes. Lo que no se mide, no se controla. Lo que no se controla, se desperdicia." },
+            { id: 20, category: 'Ventas', phrase: "Vende beneficios, no funciones.", content: "A tu cliente no le importa cómo funciona tu software, le importa cuánto tiempo o dinero le va a ahorrar. Habla su idioma, no el tuyo." },
+            { id: 21, category: 'Liderazgo', phrase: "Humildad intelectual.", content: "Rodéate de personas más inteligentes que tú. El papel del líder no es tener todas las respuestas, sino hacer las preguntas correctas." },
+            { id: 22, category: 'Marketing', phrase: "Consistencia de marca.", content: "La marca no es un logo, es una promesa cumplida repetidamente. Asegúrate de que cada punto de contacto con el cliente refuerce esa promesa." },
+            { id: 23, category: 'Productivity', phrase: "Regla de los 2 minutos.", content: "Si una tarea toma menos de dos minutos, hazla inmediatamente. No permitas que las pequeñas tareas saturen tu lista de pendientes mental." },
+            { id: 24, category: 'Estrategia', phrase: "Escalabilidad.", content: "Si tu negocio depende de tu presencia física constante, tienes un trabajo de lujo. Diseña procesos que permitan que el negocio crezca sin ti." },
+            { id: 25, category: 'Finanzas', phrase: "Fondo de emergencia.", content: "Un negocio sin reservas es un negocio con miedo. Mantén al menos seis meses de costes operativos en reserva para tomar decisiones con calma." },
+            { id: 26, category: 'Ventas', phrase: "Urgencia real.", content: "Las ofertas eternas no funcionan. Crea una escasez o urgencia real para motivar la decisión de compra. El tiempo es el mejor cerrador." },
+            { id: 27, category: 'Liderazgo', phrase: "Comunicación radical.", content: "Sé claro, no amable. La falta de claridad genera confusión y resentimiento. La honestidad directa, con respeto, acelera todos los procesos." },
+            { id: 28, category: 'Marketing', phrase: "Email Marketing.", content: "Tu lista de correos es el único activo que posees en internet. Las redes sociales son prestadas. Construye una relación directa con tu audiencia." },
+            { id: 29, category: 'Productividad', phrase: "Mañanas de enfoque.", content: "Haz lo más difícil y productivo en las primeras dos horas de tu día. El resto de la jornada es para gestionar lo que otros necesitan de ti." },
+            { id: 30, category: 'Estrategia', phrase: "Analiza a la competencia.", content: "No para copiar, sino para diferenciarte. Entiende qué están ignorando y conviértelo en tu principal propuesta de valor." },
+            { id: 31, category: 'Finanzas', phrase: "Precio por valor.", content: "No fijes precios basados en tus costes, sino en el valor que el cliente percibe. El precio bajo es una carrera hacia el fondo donde nadie gana." },
+            { id: 32, category: 'Ventas', phrase: "Test de objeciones.", content: "Anticipa las dudas de tu cliente y respóndelas antes de que las formule. Transmitir seguridad ante las dudas es la clave del cierre." },
+            { id: 33, category: 'Liderazgo', phrase: "Reconocimiento público.", content: "Elogia en público y corrige en privado. El reconocimiento es el combustible del talento. Hazlo específico y sincero." },
+            { id: 34, category: 'Marketing', phrase: "Inbound Marketing.", content: "Deja de perseguir a tus clientes. Crea contenido que resuelva sus problemas y ellos vendrán a ti buscando tu solución profesional." },
+            { id: 35, category: 'Productividad', phrase: "Desconexión total.", content: "La creatividad requiere aburrimiento y espacio. Desconecta del trabajo al menos un día a la semana para que tu cerebro genere nuevas ideas." },
+            { id: 36, category: 'Estrategia', phrase: "Networking estratégico.", content: "Tu red de contactos es tu valor neto. No busques qué puedes obtener, busca cómo puedes ayudar primero. Las relaciones sólidas abren puertas cerradas." },
+            { id: 37, category: 'Finanzas', phrase: "Apalancamiento.", content: "Usa el dinero, el talento o la tecnología de otros para multiplicar tus resultados. No intentes hacerlo todo solo; el apalancamiento crea riqueza." },
+            { id: 38, category: 'Ventas', phrase: "El poder del silencio.", content: "Después de presentar el precio, cállate. El primero que habla después del precio suele perder su posición de fuerza. Deja que el cliente procese." },
+            { id: 39, category: 'Liderazgo', phrase: "Misión compartida.", content: "Si quieres construir un barco, no pidas madera; haz que tu equipo anhele la inmensidad del mar. Inspira con un propósito mayor." },
+            { id: 40, category: 'Marketing', phrase: "Ciclo de vida del cliente.", content: "Es mucho más barato venderle a un cliente actual que conseguir uno nuevo. Enfócate en la post-venta y en maximizar el valor de por vida." }
+        ];
+
+        let state = {
+            currentId: 1,
+            racha: parseInt(localStorage.getItem('racha')) || 0,
+            aplicadas: JSON.parse(localStorage.getItem('aplicadas')) || [],
+            lastActionDate: localStorage.getItem('lastDate') || null,
+            musicPlaying: false,
+            audioPromise: null
+        };
+
+        const bgMusic = document.getElementById('bgMusic');
+
+        window.onload = () => {
+            updateUIState();
+            renderLibrary();
+            window.addEventListener('mousemove', (e) => {
+                const glow = document.getElementById('glow');
+                glow.style.left = (e.clientX - 200) + 'px';
+                glow.style.top = (e.clientY - 200) + 'px';
+            });
+            bgMusic.volume = 0.3;
+        };
+
+        async function playMusicSafely() {
+            try {
+                if (state.audioPromise) await state.audioPromise;
+                state.audioPromise = bgMusic.play();
+                await state.audioPromise;
+                state.musicPlaying = true;
+                document.getElementById('musicBtn').innerText = "Música ON";
+                state.audioPromise = null;
+            } catch (error) {
+                if (error.name !== 'AbortError') console.error("Audio Error:", error);
+                state.audioPromise = null;
+            }
+        }
+
+        async function pauseMusicSafely() {
+            if (state.audioPromise) {
+                try { await state.audioPromise; } catch (e) {}
+            }
+            bgMusic.pause();
+            state.musicPlaying = false;
+            document.getElementById('musicBtn').innerText = "Música OFF";
+            state.audioPromise = null;
+        }
+
+        function toggleMusic() {
+            if (state.musicPlaying) pauseMusicSafely();
+            else playMusicSafely();
+        }
+
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(s => {
+                s.classList.add('hidden');
+                s.style.opacity = '0';
+            });
+            const active = document.getElementById(id);
+            active.classList.remove('hidden');
+            setTimeout(() => active.style.opacity = '1', 50);
+
+            if(id === 'daily') {
+                loadDaily(state.currentId);
+                // Iniciar música automáticamente al entrar en la lección
+                if(!state.musicPlaying) playMusicSafely();
+            }
+        }
+
+        function loadDaily(id) {
+            const item = database.find(d => d.id === id);
+            document.getElementById('daily-text').innerText = item.content;
+            document.getElementById('category-tag').innerText = item.category;
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10">
-                    <div class="flex text-yellow-400 mb-6">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="italic text-lg mb-6 leading-relaxed">"Excelente trato y profesionalidad. Me explicaron todo perfectamente y el resultado fue inmejorable. ¡Muy recomendables!"</p>
-                    <p class="font-bold text-cyan-300">— Cliente Verificado</p>
-                </div>
-                <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10 translate-y-4">
-                    <div class="flex text-yellow-400 mb-6">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="italic text-lg mb-6 leading-relaxed">"La mejor clínica de Lorca. Higiene impecable y el personal es súper amable. Me sentí muy cómodo desde el primer momento."</p>
-                    <p class="font-bold text-cyan-300">— Paciente local</p>
-                </div>
-                <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10">
-                    <div class="flex text-yellow-400 mb-6">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <p class="italic text-lg mb-6 leading-relaxed">"Son muy puntuales con las citas y el equipamiento que tienen se nota que es moderno. Volveré sin duda."</p>
-                    <p class="font-bold text-cyan-300">— Reseña de Google</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            const isDone = state.aplicadas.includes(id);
+            const btn = document.getElementById('applyBtn');
+            btn.innerHTML = isDone ? '✓ Aplicada' : 'Marcar como aplicada';
+            btn.style.borderColor = isDone ? '#10b981' : '';
+        }
 
-    <!-- CONTACTO Y HORARIOS -->
-    <section id="contacto" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row gap-16">
-                
-                <!-- Info de contacto -->
-                <div class="lg:w-1/3">
-                    <h2 class="text-4xl font-black mb-10 text-slate-900">Contacto</h2>
-                    
-                    <div class="space-y-10">
-                        <div class="flex gap-6 items-start">
-                            <div class="bg-slate-900 text-white p-4 rounded-2xl">
-                                <i class="fas fa-map-marker-alt fa-lg"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg mb-1">Visítanos</h4>
-                                <p class="text-slate-500 leading-relaxed">C. Maria Mar Marmol Ferri, <br>30800 Lorca, Murcia</p>
-                            </div>
+        function markApplied() {
+            if(!state.aplicadas.includes(state.currentId)) {
+                state.aplicadas.push(state.currentId);
+                const today = new Date().toDateString();
+                if(state.lastActionDate !== today) {
+                    state.racha++;
+                    state.lastActionDate = today;
+                }
+                saveState();
+                updateUIState();
+                showToast("Acción registrada. Racha actualizada.");
+                loadDaily(state.currentId);
+                renderLibrary();
+            }
+        }
+
+        function saveState() {
+            localStorage.setItem('racha', state.racha);
+            localStorage.setItem('aplicadas', JSON.stringify(state.aplicadas));
+            localStorage.setItem('lastDate', state.lastActionDate);
+        }
+
+        function updateUIState() {
+            document.getElementById('streakVal').innerText = `${state.racha} Días`;
+        }
+
+        function showToast(msg) {
+            const t = document.getElementById('toast');
+            t.innerText = msg;
+            t.style.transform = 'translateY(0)';
+            setTimeout(() => t.style.transform = 'translateY(150px)', 3000);
+        }
+
+        function renderLibrary(filter = 'all') {
+            const grid = document.getElementById('library-grid');
+            grid.innerHTML = '';
+            const items = filter === 'all' ? database : database.filter(d => d.category === filter);
+            
+            items.forEach(item => {
+                const isDone = state.aplicadas.includes(item.id);
+                const card = document.createElement('div');
+                card.className = "p-6 border border-white/10 rounded-2xl hover:bg-white/5 transition cursor-pointer flex flex-col justify-between h-40 group";
+                card.onclick = () => {
+                    state.currentId = item.id;
+                    showSection('daily');
+                };
+                card.innerHTML = `
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[9px] uppercase tracking-widest text-blue-400 font-bold">${item.category}</span>
+                            ${isDone ? '<span class="applied-badge">✓</span>' : ''}
                         </div>
-
-                        <div class="flex gap-6 items-start">
-                            <div class="bg-green-500 text-white p-4 rounded-2xl">
-                                <i class="fab fa-whatsapp fa-lg"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg mb-1">WhatsApp</h4>
-                                <p class="text-slate-500">Respuesta rápida en horario comercial</p>
-                                <a href="https://wa.me/34690243537" class="text-green-600 font-bold hover:underline">690 24 35 37</a>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100">
-                            <h4 class="font-bold text-lg mb-6 flex items-center gap-2 text-cyan-700">
-                                <i class="fas fa-clock"></i> Horario Semanal
-                            </h4>
-                            <ul class="space-y-3 text-sm">
-                                <li class="flex justify-between border-b border-slate-200 pb-2">
-                                    <span class="font-semibold">Lunes</span>
-                                    <span>Desde 10:00 AM</span>
-                                </li>
-                                <li class="flex justify-between border-b border-slate-200 pb-2 italic text-slate-400">
-                                    <span>Martes - Viernes</span>
-                                    <span>Consultar cita</span>
-                                </li>
-                                <li class="flex justify-between text-red-400 font-medium">
-                                    <span>Sábados y Domingos</span>
-                                    <span>Cerrado</span>
-                                </li>
-                            </ul>
-                        </div>
+                        <h3 class="text-base font-medium leading-snug group-hover:text-blue-400 transition">${item.phrase}</h3>
                     </div>
-                </div>
+                    <div class="text-[10px] opacity-30">Lección #${item.id}</div>
+                `;
+                grid.appendChild(card);
+            });
+        }
 
-                <!-- Mapa Interactivo Visual -->
-                <div class="lg:w-2/3 h-[500px] lg:h-auto min-h-[500px] rounded-[3rem] overflow-hidden shadow-inner border border-slate-200 relative group">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3161.464670265113!2d-1.6945846234690967!3d37.68137777202302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd64e639be8a1e07%3A0xb19755f02f47ebf3!2sCLINICA%20DENTAL%20%22SONRISAS%22!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses" 
-                        class="w-full h-full grayscale-[0.2] contrast-[1.1]" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                    <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur p-4 rounded-2xl flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity">
-                        <span class="text-sm font-bold">M8J5+H5 Lorca, Murcia</span>
-                        <a href="https://www.google.com/maps/dir//CLINICA+DENTAL+%22SONRISAS%22,+C.+Maria+Mar+Marmol+Ferri,+30800+Lorca,+Murcia" target="_blank" class="bg-cyan-600 text-white px-4 py-2 rounded-xl text-xs font-bold uppercase">Cómo llegar</a>
-                    </div>
-                </div>
+        function filterLibrary(cat) { renderLibrary(cat); }
 
-            </div>
-        </div>
-    </section>
+        function enterImmersive() {
+            document.body.classList.add('immersive-mode');
+            document.getElementById('exitImmersive').style.opacity = '1';
+            document.getElementById('exitImmersive').style.pointerEvents = 'auto';
+        }
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-950 text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-12 mb-16">
-                <div class="text-center md:text-left">
-                    <div class="flex items-center gap-3 mb-4 justify-center md:justify-start">
-                        <i class="fas fa-tooth text-cyan-400 fa-2x"></i>
-                        <span class="text-2xl font-black tracking-tighter uppercase">Sonrisas</span>
-                    </div>
-                    <p class="text-slate-400 max-w-sm">
-                        Referente en salud dental en Lorca. Combinamos ética profesional con tecnología de vanguardia.
-                    </p>
-                </div>
-                
-                <div class="flex gap-4">
-                    <a href="#" class="w-12 h-12 rounded-full border border-slate-800 flex items-center justify-center hover:bg-cyan-600 transition group">
-                        <i class="fab fa-instagram group-hover:scale-110 transition"></i>
-                    </a>
-                    <a href="#" class="w-12 h-12 rounded-full border border-slate-800 flex items-center justify-center hover:bg-cyan-600 transition group">
-                        <i class="fab fa-facebook-f group-hover:scale-110 transition"></i>
-                    </a>
-                    <a href="https://www.google.com/maps/place/CLINICA+DENTAL+%22SONRISAS%22" class="w-12 h-12 rounded-full border border-slate-800 flex items-center justify-center hover:bg-cyan-600 transition group">
-                        <i class="fab fa-google group-hover:scale-110 transition"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="border-t border-slate-900 pt-12 text-center text-slate-500 text-sm">
-                <p class="mb-2">Calle María Mar Mármol Ferri, Lorca (Murcia) | Tel: 690 24 35 37</p>
-                <p>&copy; 2024 Clínica Dental Sonrisas. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
+        function exitImmersive() {
+            document.body.classList.remove('immersive-mode');
+            document.getElementById('exitImmersive').style.opacity = '0';
+            document.getElementById('exitImmersive').style.pointerEvents = 'none';
+        }
+    </script>
 </body>
 </html>
